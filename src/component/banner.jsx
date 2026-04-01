@@ -9,23 +9,17 @@ const slides = [
   {
     id: 1,
     image: banner1,
-    // title: "Latest Tech & Gadgets",
-    // subtitle: "BIG SALE",
-    // desc: "Up to 50% Off",
+   
   },
   {
     id: 2,
     image: banner2,
-    // title: "New Arrivals",
-    // subtitle: "HOT DEALS",
-    // desc: "Save Big Today",
+   
   },
   {
     id: 3,
     image: banner3,
-    // title: "Smart Devices",
-    // subtitle: "LIMITED OFFER",
-    // desc: "Best Prices Guaranteed",
+
   },
 ];
 
@@ -41,14 +35,6 @@ export default function Banner() {
     return () => clearInterval(interval);
   }, []);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   return (
     <div className="banner-slider">
       {slides.map((slide, index) => (
@@ -56,25 +42,15 @@ export default function Banner() {
           key={slide.id}
           className={`slide ${index === current ? "active" : ""}`}
           style={{ backgroundImage: `url(${slide.image})` }}
-        >
-        </div>
+        />
       ))}
 
-      {/* Arrows */}
-      {/* <button className="arrow left" onClick={prevSlide}>
-        ❮
-      </button>
-      <button className="arrow right" onClick={nextSlide}>
-        ❯
-      </button> */}
-
-      {/* Dots */}
       <div className="dots">
-        {slides.map((_, i) => (
+        {slides.map((_, index) => (
           <span
-            key={i}
-            className={i === current ? "dot active" : "dot"}
-            onClick={() => setCurrent(i)}
+            key={index}
+            className={`dot ${index === current ? "active" : ""}`}
+            onClick={() => setCurrent(index)}
           />
         ))}
       </div>
