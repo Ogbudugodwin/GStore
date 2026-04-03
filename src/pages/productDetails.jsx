@@ -17,7 +17,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://fakestoreapi.com/products`)
+        fetch(`https://sandbox.mockerito.com/ecommerce/api/products`)
             .then((res) => res.json())
             .then((data) => {
                 const foundProduct = data.find(p => slugify(p.title) === productSlug);

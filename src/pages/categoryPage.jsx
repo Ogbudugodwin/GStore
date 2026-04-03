@@ -24,7 +24,7 @@ export default function CategoryPage() {
 
   // Fetch products on category change
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://sandbox.mockerito.com/ecommerce/api/products")
       .then((res) => res.json())
       .then((data) => {
         const filtered = categoryName === "all"
