@@ -12,7 +12,7 @@ function Products() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://sandbox.mockerito.com/ecommerce/api/products")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data.slice(9, 17)));
   }, []);

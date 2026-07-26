@@ -12,7 +12,7 @@ export default function FlashDeals() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://sandbox.mockerito.com/ecommerce/api/products")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
         // duplicate items for smooth looping

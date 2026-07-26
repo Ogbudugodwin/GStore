@@ -3,8 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import { CartContext } from "../context/cartcontext";
 import "../component/CSS/productDetails.css";
-
-
 import { slugify } from "../utils/slugify";
 
 const ProductDetails = () => {
@@ -17,10 +15,10 @@ const ProductDetails = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://sandbox.mockerito.com/ecommerce/api/products`)
+        fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())
             .then((data) => {
-                const foundProduct = data.find(p => slugify(p.title) === productSlug);
+                const foundProduct = data.find((p) => slugify(p.title) === productSlug);
                 setProduct(foundProduct);
                 setLoading(false);
             })
